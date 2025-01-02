@@ -1,8 +1,3 @@
-cmake_minimum_required(VERSION 3.1.0)
-project(TauDEM)
-
-set (CMAKE_CXX_STANDARD 11)
-
 set (shape_srcs ReadOutlets.cpp)
 set (common_srcs commonLib.cpp tiffIO.cpp)
 
@@ -50,16 +45,6 @@ set (FLOWDIRCOND flowdirconditionmn.cpp flowdircond.cpp ${common_srcs})
 set (RETLIMFLOW RetLimFlowmn.cpp RetlimFlow.cpp ${common_srcs})
 set (SETREGION SetRegionmn.cpp SetRegion.cpp ${common_srcs})
 set (SINMAPSI SinmapSImn.cpp SinmapSI.cpp ${common_srcs})
-
-# MPI is required
-find_package(MPI REQUIRED)
-include_directories(${MPI_INCLUDE_PATH})
-set(CMAKE_CXX_FLAG "${CMAKE_CXX_FLAG} ${MPI_COMPILE_FLAGS}")
-set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} ${MPI_LINK_FLAGS}")
-
-# GDAL is required
-find_package(GDAL REQUIRED)
-include_directories(${GDAL_INCLUDE_DIR})
 
 add_executable (aread8 ${AREAD8})
 add_executable (areadinf ${AREADINF})
