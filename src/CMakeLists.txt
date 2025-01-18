@@ -45,6 +45,7 @@ set (FLOWDIRCOND flowdirconditionmn.cpp flowdircond.cpp ${common_srcs})
 set (RETLIMFLOW RetLimFlowmn.cpp RetlimFlow.cpp ${common_srcs})
 set (SETREGION SetRegionmn.cpp SetRegion.cpp ${common_srcs})
 set (SINMAPSI SinmapSImn.cpp SinmapSI.cpp ${common_srcs})
+set (INUNMAP InunMapmn.cpp InunMap.cpp ${common_srcs})
 
 add_executable (aread8 ${AREAD8})
 add_executable (areadinf ${AREADINF})
@@ -81,6 +82,7 @@ add_executable (flowdircond ${FLOWDIRCOND})
 add_executable (retlimflow ${RETLIMFLOW})
 add_executable (setregion ${SETREGION})
 add_executable (sinmapsi ${SINMAPSI})
+add_executable (inunmap ${INUNMAP})
 
 set (MY_TARGETS aread8
                 areadinf
@@ -116,9 +118,12 @@ set (MY_TARGETS aread8
                 flowdircond
                 retlimflow
                 setregion
-                sinmapsi)
+                sinmapsi
+                inunmap)
+
+include_directories(${NETCDF_INCLUDE_DIRS})
 
 foreach( c_target ${MY_TARGETS} )
-    target_link_libraries(${c_target} ${MPI_LIBRARIES} ${GDAL_LIBRARY})
+    target_link_libraries(${c_target} ${MPI_LIBRARIES} ${GDAL_LIBRARY} ${NETCDF_LIBRARIES})
     install(TARGETS ${c_target} DESTINATION taudem)
 endforeach( c_target ${MY_TARGETS} )

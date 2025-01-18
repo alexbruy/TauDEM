@@ -3,6 +3,9 @@
 cmake_minimum_required(VERSION 3.23.0)
 set(CMAKE_COLOR_MAKEFILE ON)
 
+# set path to additional CMake modules
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
+
 #############################################################
 # Project and version
 
@@ -24,7 +27,10 @@ find_package(GDAL REQUIRED)
 message(STATUS "Found GDAL: ${GDAL_VERSION} ${GDAL_DIR}")
 
 find_package(MPI REQUIRED)
-message(STATUS "Found MPI: ${MPI_VERSION} ${MPI_HOME}")
+message(STATUS "Found MPI: ${MPI_CXX_VERSION} ${MPI_HOME}")
+
+find_package(NetCDF REQUIRED)
+message(STATUS "Found NetCDF: ${NETCDF_VERSION} ${NETCDF_INCLUDE_DIRS}")
 
 #############################################################
 
