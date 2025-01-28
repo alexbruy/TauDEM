@@ -20,6 +20,8 @@ project(taudem VERSION ${COMPLETE_VERSION})
 math(EXPR TAUDEM_VERSION_INT "${CPACK_PACKAGE_VERSION_MAJOR}*10000+${CPACK_PACKAGE_VERSION_MINOR}*100+${CPACK_PACKAGE_VERSION_PATCH}")
 message(STATUS "TauDEM version: ${COMPLETE_VERSION} ${RELEASE_NAME} (${TAUDEM_VERSION_INT})")
 
+set (WITH_INUNMAP FALSE CACHE BOOL "Determines whether inunmap tool should be built")
+
 #############################################################
 # search for dependencies
 
@@ -29,8 +31,10 @@ message(STATUS "Found GDAL: ${GDAL_VERSION} ${GDAL_DIR}")
 find_package(MPI REQUIRED)
 message(STATUS "Found MPI: ${MPI_CXX_VERSION} ${MPI_HOME}")
 
-find_package(NetCDF REQUIRED)
-message(STATUS "Found NetCDF: ${NETCDF_VERSION} ${NETCDF_INCLUDE_DIRS}")
+if (WITH_INUNMAP)
+  find_package(NetCDF REQUIRED)
+  message(STATUS "Found NetCDF: ${NETCDF_VERSION} ${NETCDF_INCLUDE_DIRS}")
+endif()
 
 #############################################################
 
