@@ -26,14 +26,10 @@ set (WITH_INUNMAP FALSE CACHE BOOL "Determines whether inunmap tool should be bu
 # search for dependencies
 
 find_package(GDAL REQUIRED)
-message(STATUS "Found GDAL: ${GDAL_VERSION} ${GDAL_DIR}")
-
 find_package(MPI REQUIRED)
-message(STATUS "Found MPI: ${MPI_CXX_VERSION} ${MPI_HOME}")
 
 if (WITH_INUNMAP)
   find_package(NetCDF REQUIRED)
-  message(STATUS "Found NetCDF: ${NETCDF_VERSION} ${NETCDF_INCLUDE_DIRS}")
 endif()
 
 #############################################################
