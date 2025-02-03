@@ -43,10 +43,10 @@ email:  dtarb@usu.edu
 #include <math.h>
 #include <iostream>
 #include <queue>
-#include "commonLib.h"
+#include "commonlib.h"
 #include "linearpart.h"
 #include "createpart.h"
-#include "tiffIO.h"
+#include "tiffio.h"
 #include "ogrsf_frmts.h"
 using namespace std;
 

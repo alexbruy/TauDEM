@@ -43,7 +43,7 @@ email:  dtarb@usu.edu
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "commonLib.h"
+#include "commonlib.h"
 #include "aread8.h"
 
 int main(int argc,char **argv)

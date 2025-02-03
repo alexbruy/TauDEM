@@ -41,10 +41,10 @@ email:  dtarb@usu.edu
 #include <mpi.h>
 //#include "linearpart.h"   Part of CommonLib
 #include "createpart.h"
-#include "commonLib.h"
+#include "commonlib.h"
 #include "d8.h"
 //#include "tiffIO.h"    Part of Commonlib
-#include "Node.h"
+#include "node.h"
 
 using namespace std;
 

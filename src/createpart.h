@@ -41,7 +41,7 @@ email:  dtarb@usu.edu
 #ifndef CREATEPART_H
 #define CREATEPART_H
 
-#include "commonLib.h"
+#include "commonlib.h"
 //#include "partition.h"
 #include "linearpart.h"
 

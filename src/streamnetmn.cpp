@@ -42,8 +42,8 @@ email:  dtarb@usu.edu
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "commonLib.h"
-#include "DropAnalysis.h"
+#include "commonlib.h"
+#include "dropanalysis.h"
 #include "tardemlib.h"
 #include "streamnet.h"
 

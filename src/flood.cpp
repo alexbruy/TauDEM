@@ -40,10 +40,10 @@ email:  dtarb@usu.edu
 
 #include <mpi.h>
 #include <queue>
-#include "commonLib.h"
+#include "commonlib.h"
 #include "linearpart.h"
 #include "createpart.h"
-#include "tiffIO.h"
+#include "tiffio.h"
 #include <stack>
 using namespace std;
 

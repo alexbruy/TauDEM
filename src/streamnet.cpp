@@ -48,10 +48,10 @@ email:  dtarb@usu.edu
 #include <iomanip>
 #include <queue>
 
-#include "commonLib.h"
+#include "commonlib.h"
 //#include "linearpart.h"
 #include "createpart.h"
-#include "tiffIO.h"
+#include "tiffio.h"
 #include "tardemlib.h"
 #include "linklib.h"
 #include "streamnet.h"

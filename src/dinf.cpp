@@ -40,12 +40,12 @@ email:  dtarb@usu.edu
 
 #include <mpi.h>
 
-#include "commonLib.h"
+#include "commonlib.h"
 #include "linearpart.h"
 #include "createpart.h"
-#include "tiffIO.h"
+#include "tiffio.h"
 #include <math.h>
-#include "Node.h"
+#include "node.h"
 using namespace std;
 
 //double fact[9];

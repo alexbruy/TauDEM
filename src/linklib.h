@@ -45,11 +45,11 @@ email:  dtarb@usu.edu
 #include <math.h>
 #include <iomanip>
 #include <queue>
-#include "commonLib.h"
+#include "commonlib.h"
 #include "linearpart.h"
 #include "createpart.h"
 #include "partition.h"
-#include "tiffIO.h"
+#include "tiffio.h"
 //#include "shapelib/shapefil.h"
 //#ifndef LINKLIB_H
 //#define LINKLIB_H

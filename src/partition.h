@@ -42,7 +42,7 @@ email:  dtarb@usu.edu
 #include <stdio.h>
 #ifndef PARTITION_H
 #define PARTITION_H
-#include "tiffIO.h"
+#include "tiffio.h"
 class tiffIO;
 class tdpartition{
 	protected:
