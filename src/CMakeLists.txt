@@ -74,7 +74,7 @@ add_executable (retlimflow ${RETLIMFLOW})
 add_executable (setregion ${SETREGION})
 add_executable (sinmapsi ${SINMAPSI})
 
-set (MY_TARGETS aread8
+set (APPS_TARGETS aread8
                 areadinf
                 d8flowdir
                 d8flowpathextremeup
@@ -110,14 +110,14 @@ set (MY_TARGETS aread8
                 setregion
                 sinmapsi)
 
-foreach(c_target ${MY_TARGETS})
-  target_link_libraries(${c_target} ${MPI_LIBRARIES} ${GDAL_LIBRARY})
-  install(TARGETS ${c_target} DESTINATION taudem)
-endforeach(c_target ${MY_TARGETS})
+foreach(APP IN ITEMS ${APPS_TARGETS})
+  target_link_libraries(${APP} ${MPI_LIBRARIES} ${GDAL_LIBRARY})
+endforeach(APP ${APPS_TARGETS})
+install(TARGETS ${APPS_TARGETS} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 if (WITH_INUNMAP)
   include_directories(${NETCDF_INCLUDE_DIRS})
   add_executable (inunmap ${INUNMAP})
   target_link_libraries(inunmap ${MPI_LIBRARIES} ${GDAL_LIBRARY} ${NETCDF_LIBRARIES})
-  install(TARGETS inunmap DESTINATION taudem)
+  install(TARGETS inunmap RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 endif()
